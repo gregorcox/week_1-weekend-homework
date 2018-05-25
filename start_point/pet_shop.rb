@@ -21,3 +21,16 @@ end
 def stock_count(shop)
   return shop[:pets].length
 end
+
+def pets_by_breed(shop, breed)
+  number_of_breed = []
+  for pets in shop[:pets]
+    if pets[:breed] == breed
+      number_of_breed.push(pets)
+    end
+  end
+  return number_of_breed
+end
+
+# def find_pet_by_name(shop, name)
+#   for pets in shop
