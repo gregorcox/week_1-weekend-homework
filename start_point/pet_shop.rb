@@ -24,21 +24,39 @@ end
 
 def pets_by_breed(shop, breed)
   number_of_breed = []
-  for pets in shop[:pets]
-    if pets[:breed] == breed
-      number_of_breed.push(pets)
+  for pet in shop[:pets]
+    if pet[:breed] == breed
+      number_of_breed.push(pet)
     end
   end
   return number_of_breed
 end
 
+# def find_pet_by_name(shop, name)
+#   for pet in shop[:pets]
+#     if pet[:name] == name
+#       return pet
+#     end
+#   end
+# end
+
+# def find_pet_by_name(shop, name)
+#   result = shop[:pets].find { |pet| pet[:name].include?(name) }
+#   return result
+# end
+
 def find_pet_by_name(shop, name)
-  for pets in shop[:pets]
-    if pets[:name] == name
-      return pets
+  result = nil
+  for pet in shop[:pets]
+    if pet[:name] == name
+      result = pet
+      break
     end
   end
+  return result
 end
+
+
 
 # def remove_pet_by_name(shop, name)
 #   for pet in shop[:pets]
@@ -71,3 +89,5 @@ end
 def customer_can_afford_pet(customer, pet)
   customer[:cash] > pet[:price]
 end
+
+# def sell_pet_to_customer(shop, pet, customer)
