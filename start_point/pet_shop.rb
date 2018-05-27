@@ -32,19 +32,6 @@ def pets_by_breed(shop, breed)
   return number_of_breed
 end
 
-# def find_pet_by_name(shop, name)
-#   for pet in shop[:pets]
-#     if pet[:name] == name
-#       return pet
-#     end
-#   end
-# end
-
-# def find_pet_by_name(shop, name)
-#   result = shop[:pets].find { |pet| pet[:name].include?(name) }
-#   return result
-# end
-
 def find_pet_by_name(shop, name)
   result = nil
   for pet in shop[:pets]
@@ -55,8 +42,6 @@ def find_pet_by_name(shop, name)
   end
   return result
 end
-
-
 
 def remove_pet_by_name(shop, name)
   for pet in shop[:pets]
